@@ -55,6 +55,9 @@
 
 - (id)peek:(NSUInteger)index
 {
+    if (index < oneStack.count) {
+        return [oneStack objectAtIndex:index];
+    }
     return nil;
 }
 

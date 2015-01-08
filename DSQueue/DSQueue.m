@@ -74,6 +74,11 @@
 
 - (id)peek:(NSUInteger)index
 {
+    if (index < outStack.count) {
+        return [outStack objectAtIndex:outStack.count - index - 1];
+    } else if (index < inStack.count + outStack.count) {
+        return [inStack objectAtIndex:index - outStack.count];
+    }
     return nil;
 }
 
